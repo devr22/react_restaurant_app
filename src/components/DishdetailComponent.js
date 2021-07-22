@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbIte
     Modal, ModalBody, ModalHeader, Label, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Loading } from './LoadingComponent';
 
 function RenderDish({dish}) {
     return(
@@ -48,8 +49,31 @@ function RenderComments({comments, addComment, dishId}) {
 }
 
 const DishDetail = (props) => {
-    const dish = props.dish
-    if(dish != null)
+    
+    if (props.isLoading) {
+        return(
+            <div className="container">
+                <div className="row"> 
+                    <div className="mx-auto">           
+                        <Loading />
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    else if (props.errMsg) {
+        return(
+            <div className="container">
+                <div className="row">            
+                <div className="nx-auto">
+                    <h4>{props.errMsg}</h4>
+                </div>
+                </div>
+            </div>
+        );
+    }
+
+    else if(props.dish != null)
         return (
             <div className="container">
                 <div className="row">
