@@ -19,7 +19,7 @@ function RenderCard({item, isLoading, errMsg}) {
       </div>
     );
   }
-  else {
+  else
     return (
       <Card>
         <CardImg src={baseUrl + item.image} alt={item.name} />
@@ -30,7 +30,6 @@ function RenderCard({item, isLoading, errMsg}) {
         </CardBody>
       </Card>
     );
-  }
 }
 
 function Home(props) {
