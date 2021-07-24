@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
-import { FadeTransform, Fade, Stagger } from 'react-animation-components'
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 function RenderDish({dish}) {
     return(

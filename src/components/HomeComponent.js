@@ -8,14 +8,14 @@ function RenderCard({item, isLoading, errMsg}) {
 
   if (isLoading) {
     return (
-      <div className="nx-auto">
+      <div className="mx-auto">
           <Loading />
       </div>
     );
   }
   else if (errMsg) {
     return(
-      <div className="nx-auto">
+      <div className="mx-auto">
           <h4>{errMsg}</h4>
       </div>
     );
@@ -53,7 +53,9 @@ function Home(props) {
             errMsg={props.promoErrMsg} />
         </div>
         <div className="col-12 col-md m-1">
-          <RenderCard item={props.leader} />
+          <RenderCard item={props.leader}
+            isLoading={props.leaderLoading}
+            errMsg={props.leaderErrMsg} />
         </div>
       </div>
     </div>
